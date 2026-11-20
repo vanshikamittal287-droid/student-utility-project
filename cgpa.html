@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Utility & GPA Calculator</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+
+    <header>
+        <h1>Student Utility Dashboard</h1>
+        <p>First Semester CSE | SGPA Calculator & Task Manager</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- SECTION 1: SGPA CALCULATOR -->
+        <section class="card">
+            <h2>SGPA Calculator</h2>
+            <p class="subtitle">Enter credits and select your grade (10-point scale)</p>
+
+            <div id="subject-list">
+                <!-- Subject 1 -->
+                <div class="subject-row">
+                    <input type="text" placeholder="Subject 1 (e.g. Maths)" class="sub-name">
+                    <input type="number" placeholder="Credits" class="credits" min="1" max="10">
+                    <select class="grade">
+                        <option value="10">O (10)</option>
+                        <option value="9">A+ (9)</option>
+                        <option value="8">A (8)</option>
+                        <option value="7">B+ (7)</option>
+                        <option value="6">B (6)</option>
+                        <option value="5">C (5)</option>
+                        <option value="0">F (0)</option>
+                    </select>
+                </div>
+
+                <!-- Subject 2 -->
+                <div class="subject-row">
+                    <input type="text" placeholder="Subject 2 (e.g. Physics)" class="sub-name">
+                    <input type="number" placeholder="Credits" class="credits" min="1" max="10">
+                    <select class="grade">
+                        <option value="10">O (10)</option>
+                        <option value="9">A+ (9)</option>
+                        <option value="8">A (8)</option>
+                        <option value="7">B+ (7)</option>
+                        <option value="6">B (6)</option>
+                        <option value="5">C (5)</option>
+                        <option value="0">F (0)</option>
+                    </select>
+                </div>
+
+                <!-- Subject 3 -->
+                <div class="subject-row">
+                    <input type="text" placeholder="Subject 3 (e.g. WAD)" class="sub-name">
+                    <input type="number" placeholder="Credits" class="credits" min="1" max="10">
+                    <select class="grade">
+                        <option value="10">O (10)</option>
+                        <option value="9">A+ (9)</option>
+                        <option value="8">A (8)</option>
+                        <option value="7">B+ (7)</option>
+                        <option value="6">B (6)</option>
+                        <option value="5">C (5)</option>
+                        <option value="0">F (0)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn-secondary" onclick="addSubjectRow()">+ Add Subject</button>
+                <button type="button" class="btn-primary" onclick="calculateSGPA()">Calculate SGPA</button>
+            </div>
+
+            <div id="gpa-result" class="result-box">
+                Your SGPA: <span>0.00</span>
+            </div>
+        </section>
+
+        <!-- SECTION 2: STUDY TO-DO LIST -->
+        <section class="card">
+            <h2>Assignment & Study Tracker</h2>
+            <p class="subtitle">Keep track of your lab files and upcoming deadlines</p>
+
+            <div class="todo-input-group">
+                <input type="text" id="task-input" placeholder="e.g., Complete WAD Experiment 5">
+                <button type="button" class="btn-primary" onclick="addTask()">Add</button>
+            </div>
+
+            <ul id="task-list">
+                <!-- Sample initial task -->
+                <li>
+                    <span>Submit CSE Lab File</span>
+                    <button class="delete-btn" onclick="removeTask(this)">Done</button>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Created for Web Application Development (WAD) Assignment</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
